@@ -1,2 +1,2 @@
 # bad-translator
-contains loads of letters and curse words
+old javascript use with risk
