@@ -1,0 +1,172 @@
+Finally made one of these to keep track of what i need to finish!
+( - ): Feature to add
+( > ): Bug
+(///): Do it now
+
+- Rest system to rest for players, and stuff
+
+- IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	Remove the wagon leader from sick things. The leader will only get sick and die if all the
+	other members have DIED.
+
+- Food and player refreshers and changers
+	Simulate the food change when traveling, not resting because of random events...
+	Also if it is during the trail, then it will quickly check if the players are starving.
+	Things like "way too much food" when tim buys way too much food for the trip.
+	Use an array of strings for rendering the morale and food amount, and sick, etc.
+
+- Finish all the random events
+
+- Revise and finish the health indicators
+
+- Add trading system
+
+- River crossing animations (maybe just a gif or video?)
+
+- Sound effects
+	var snd = new Audio("sounds/thing.wav");
+	snd.play();
+	//note you can set the currenttime to 0 if you want to play the audio multiple times while its being played
+	Heres the deal, if i want to make this a seperate thing I need to make the sound effects completely on
+	my own or someone else has to make them since i dont know how to make sounds and music. Since im not
+	distributing this, i could just use the original sounds but this is a seperate thing and shouldn't
+	just use the original sounds. I know that mecc is gone for good I could probably use the sounds without
+	being sued, but that isnt the point of using the original sounds.
+
+	The music can be started when the progression scene is loaded like the showPS function, and whenever a
+	new scene is loaded the volume will either go quiet or stop the music and count upwards the time
+	when the scene is there, and continue playing the music after the scene is closed and the progression
+	scene is then shown again. Additionally when a scene is loaded with its own music the same is done
+	and whenever a scene is loaded with its own music will just replace playing the old music.
+
+- Character dialouge
+	Its probably a good idea to have character dialogue menus, to make the game more interesting.
+	I think i could just add a new window like the notification window and have dialogue buttons
+	inside of there, along with the character's face (probably wont talk) along with the sound
+	effects to play the spoken dialogue.
+
+- Progression Icons
+	Icons/Images for the wagon and locations. The wagon hopfully will be from murugo's orweedgon trail
+	video. Also should try and add a real oxen amount indicator for the wagon, so if you have 3 oxen
+	the icon will show you having 3 oxen. Also when you rest icons, maybe even morale level indicators.
+
+- Background Improvements
+	Additionally to the progression icons for the ox and destination. The background can be very
+	detailed. My idea is that the foreground for the background can be above the actual canvas
+	background. The background will have a sky and the sky can be cloudy, rainy, etc. Reflecting
+	the real weather state. The foreground will have the earth's background to overlap the sky.
+	Then the other elements like the wagon and destination will overlay the foreground and sky.
+
+- Longer day travels ???
+	The game right now will only play random events at the end of a day of travel, the real game will
+	display them anytime during a day. During which the wagon gets stopped and displays the event.
+	Sadly I can't pause the wagon at all, so maybe split the days into events that get calculated to
+	play. Thinking about it, ive actually already wanted to do this before and forgot. Oh well.
+
+- Saved Game ???
+	If javascript allows this, should add the simple ability to save your game. This should be very
+	easy to do. Simply save the current state of all the global variables, and add a variable of
+	what the current canvas scene the player is on. Also should save the console log! Once on load
+	the game will inherit the variables and goto the last state the player was on. This should infact
+	work.
+
+- Saved Stats and Graves
+	If javascript allows this, the game must have a leaderboard like in the original and also save
+	the gravestones that the player makes!
+
+===================================================================================================
+
+- Sickness should include grandfather clock count for chances!
+
+- Chat Box for changing colors/etc.
+	Add a button to add a challenge instead of just no challenge sitting there
+
+	Maybe add the own game's challenges that will notify or literally prevent the player from
+	doing the things that the challenge requires. Maybe also add a exception if in a soft lock.
+	Maybe add a notification to ask the player if they want the game to be handled differently,
+	or not.
+
+	Maybe add a handler that will check to see if Tim did or did not meet the challenge goal.
+	If tim hasn't set the game modifier, the game will notify Tim that he broke the rules and
+	has not finished the challenge. If the challenge is a end game challenge or a during the
+	game challenge, then they will notify Tim that hes meet the goal!
+
+	Maybe even also add something to keep track of all the times tim has broken the challenge
+	rules, meet the challenge goal, and the date (maybe?), somewhere so the chat can see it or
+	etc.
+	
+- JOHN CENA
+	Maybe like tiny elvis you get a dialogue box and it leads to the dialogue reading to like the
+	john cena phone call thing, and then it pops up with JOHHHHN CEEENA DUN DUN DUN DUNNNNNNNN
+
+- Code Blue
+	When someone is about to die, you perform a operation to save them like in code blue.
+
+- Dust!
+	Add the town of dust into the game!! why not!
+	Maybe tim can buy a sheriff's badge to visit dust.
+	Additionally, he could show hes badge like in ace attorney.
+
+- Hunting gamemodes instead of just the normal boring hunting
+	Since the canvas system is really reliable at displaying graphics effortlessly
+	I could make a set of scenes where the player will play something like DOOM,
+	where you can shoot enemies and gain a score for food.
+
+	A pokemon hunting gamemode would be stupid easy to simulate. Its kinda offensively easy.
+	So you fight a few pokemon to get food and stuff!
+
+- Puyo Puyo
+	Ok puyo puyo sounds like a cool fun idea but idk how well it would fit in, and also this
+	one is alot more complex than the DOOM/Pokemon hunting gamemodes. Also tim might not like
+	the half-assed nature of it.
+
+- Tiny Elvis Cameo?
+	Im thinking of like just a character you can talk too in a town at the end of the game.
+	Maybe a giant elvis? with a 2001 intro as GIANT ELVIS.
+	
+	GIANT ELVIS: maybe it would be funnier if instead a tiny elvis its GIANT ELVIS and sutff.
+
+- 42 Oxen
+	Maybe if tim buys 42 or 14 oxen thatll be an easter egg for me Volante42.
+
+- Time Travel
+	When the wagon gets stuck in the mud, you can open the credits menu to time travel.
+	Maybe also you can buy a flux capaciter
+	Or even when you have 88 oxen
+	You get a cutscene of the progression scene where your wagon looks like a delorean,
+	and you speed up to time travel.
+	Maybe add time sickness? like parkingsons?
+
+- Cheats
+	Real Ideas for cheats:
+		- rosebud: Get moneys!
+		- tim time: brings up the time circuit controls, to then time travel.
+		- diE: revive all players.
+		- pleh: get a list of all the cheats in the game, and maybe some debug console commands?
+		- mount c everything: opens debug console.
+			//This is a joke because tim cant dosbox.
+		
+	Now that ive made a map script, maybe i can add a map of the entire game where you can go to
+	places in the game?? And also use the map to show progress as well, and the cheat will allow
+	the option to travel there.
+	maybe = (apply snow on frostbite)
+	
+	Dumb Ideas for cheats:(or ones that are for novelty and not really a cheat)
+		- timBBQQT: Glitch out the game!
+		- Kappa:
+		- smoke weed everyday:
+		- volante: a secret thing of me? maybe a super secret cheating menu?
+		- JOHN CENA: brings up the john cena thing
+		- giant elvis: brings up the giant elvis thing
+		- pandas:
+		- this is the police:
+		- hello wildcats:
+		- webber:
+		- bee: Flips the game upside down
+		
+		- pet sounds: maybe change the background to a pet sounds styled tshirt thing.
+	
+	Maybe include a fake firefox popup on the bottom that will say goofy things during the game or
+	even game crash notes.
+	With the john cena thing, it could pop up with john cena stuff with a john cena background and
+	play the music silently and stuff as just a annoyance.

@@ -1,0 +1,106 @@
+body {
+	margin:0;
+	padding:0;
+	background:#000;
+}
+
+@font-face
+{
+	font-family:"FixedSysExcelsior301";
+	src: url("FSEX300.ttf");
+	font-style:normal;
+	font-weight:400;
+	-webkit-font-smoothing:aliased;
+	font-smooth:never;
+}
+
+@font-face
+{
+	font-family:"Inconsolata";
+	font-style:normal;
+	font-weight:400;
+	-webkit-font-smoothing:aliased;
+	font-smooth:never;
+	src: local("Inconsolata"), url("https://fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCI4P5ICox8Kq3LLUNMylGO4.woff2");
+}
+
+div.console {
+	background:#000;
+	color:#ccc;
+	font-family:FixedSysExcelsior301;
+	/*font-family:Inconsolata;*/
+	/*font-family:monospace;*/
+	font-size:16px;
+	line-height:16px;
+	margin:0;
+	border:none;
+	resize:none;
+	
+	width:649px;height:95vh;
+	overflow-x:hidden;
+	overflow-y:visible;
+	
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	z-index:1;
+}
+
+div.console::selection {
+	background:#ccc;
+	color:#000;
+}
+
+div.console::-moz-selection {
+	background:#ccc;
+	color:#000;
+}
+
+div.console span::selection {
+	background:#ccc;
+	color:#000;
+}
+
+div.console span::-moz-selection {
+	background:#ccc;
+	color:#000;
+}
+
+div.hideSB
+{
+	background:#000;
+	
+	display:block;
+	z-index:2;
+	position:absolute;
+	top:0px;left:632px;
+	height:95vh;width:17px;
+}
+
+div.dbc {
+	background:#fff;
+	color:#000;
+	font-family:Inconsolata;
+	font-size:16px;
+	margin:0;
+	
+	width:256px;height:100%;
+	position:fixed;
+	top:0px;right:0px;
+	
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	line-height:16px;
+	z-index:1;
+	opacity:1;
+	visibility:visible;
+}
+
+div.dbc::selection {
+	background:#000;
+	color:#fff;
+}
+
+div.dbc::-moz-selection {
+	background:#000;
+	color:#fff;
+}

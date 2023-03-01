@@ -1,0 +1,27 @@
+.\: :/.
+Scheme: Release Number . Significate Change Number . Minor Change Number
+( + ): Added feature
+( - ): Removed feature
+( . ): Removed bug
+( % ): New bug
+
+0.1.0: June 5 2015
+	+ Added version number system.
+
+0.1.1: June 28 2015
+	+ Finished wagon party sick system (sort of). Finally... pain in the ass.
+		+ Members can get better (clears entire sickness).
+	+ Another debugging thing where it shows the values of variables instead of logging.
+	+ Added a function to literally add elements to the canvas, along with animations and life time.
+	+ Change canvas function will now display correct title of sicknesses.
+	% (potentially) Users can exploit the sick dialogue option and skip the wagon member getting sick.
+
+0.1.2: ? ? 2015
+	+ Canvas transitions added. Elements can now change the canvas after its life span
+		Changing the canvas can also run a element on start.
+	+ Improved glitches.
+	+ Added some overlay screens.
+	+ Improved user inputs.
+	+ Finally added weight for the wagon
+	+ Wagon now has a settings menu for the wagon pace, rations, etc.
+	+ Finished wagon pace. (I think?)

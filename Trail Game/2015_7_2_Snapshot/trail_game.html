@@ -1,0 +1,260 @@
+<!-- Written by Volante -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<link rel="stylesheet" type="text/css" href="default.css" />
+<head><title>Trail Game Test</title>
+<script src="mainscript.js"></script><meta charset="utf-8" /></head>
+<body onload="changeCanvas(sceneTest, testDia);clearDiary();calcWeather();updateDate();runThis();dbcWrite('Ran body scripts.');">
+<!-- changeCanvas(sceneTest, testDia); -->
+
+<div class="overlay" id="overlay">
+<div class="randombar" id="rb1"></div>
+<div class="randombar" id="rb2"></div>
+<div class="randombar" id="rb3"></div>
+<div class="randombar" id="rb4"></div>
+<div class="randombar" id="rb5"></div>
+<div class="randombar" id="rb6"></div>
+<div class="randombar" id="rb7"></div>
+<div class="randombar" id="rb8"></div>
+<div class="randombar" id="rb9"></div>
+<div class="randombar" id="rb10"></div>
+
+<div class="randombar" id="rb11"></div>
+<div class="randombar" id="rb12"></div>
+<div class="randombar" id="rb13"></div>
+<div class="randombar" id="rb14"></div>
+<div class="randombar" id="rb15"></div>
+<div class="randombar" id="rb16"></div>
+<div class="randombar" id="rb17"></div>
+<div class="randombar" id="rb18"></div>
+<div class="randombar" id="rb19"></div>
+<div class="randombar" id="rb20"></div>
+</div>
+
+<div class="debugconsole" id="dbw">
+<div class="dbchead" id="dbchead">Debug Console Game Version: <span id="dbcver">0.0.0</span></div>
+<div id="dbscr" style="overflow:auto;height:148px;">
+<pre id="consolewindow" style="margin:0;font-family:decima;">
+<span style="color:#fff;">Monotone Trail version: <span id="cver">4.20</span>
+Created and Written by Volante.</span>
+</pre></div>
+<div class="inputbar">
+<input type="text" class="debuginput" id="dbi" onkeypress="keyHandle(event)"></input>
+<button class="newbut" onclick="inputDebug()">Input</button>
+<button class="newbut" onclick="hideWindow('dbw')">Close Window</button></div>
+</div>
+
+<div class="gamewindow">
+
+<div class="partone">
+		<div class="screencontainer">
+<div id="dbcanvas" class="dbscanvas">.\:</div>
+
+<div class="gravestone" id="grave">I HONK FOR CHOLERA</div>
+
+<div class="pssbg" id="psbg" style="background-position:0px 0px;"></div>
+<div class="psswagon" id="pswagon" onclick=""></div>
+<div class="pssdest" id="psdest" style="left:20px;"></div>
+		<div id="gamecanvas" class="screencanvas"></div>
+		</div>
+
+<div class="bottommenu">
+		<div style="height:49px;">
+<div class="dtxtcenter" id="dtitle">Game Broken! <br/> You shouldn't see this message.</div>
+		</div>
+		<div class="diaselect" id="dmenu"></div>
+</div>
+</div>
+
+	<div class="rightmenu">
+	<span id="date" style="font-weight:bold;">DATE</span><br />
+	<span id="weather">Sunny</span>, <span id="temp">98</span>&deg; F<br />
+	<br />
+	<span id="dtraveled">0</span> miles Traveled<br />
+	<span id="nxtdist">0</span> miles till <span id="nxtloc">Nowhere</span><br /><br />
+	Morale is High<br />
+	No Food<br />
+	<br />
+	<table class="wpartytable">
+	<tr><td class="wparty" id="p0" style="color:#000;">Player 1</td><td id="p0h" title="">Good</td></tr>
+	<tr><td class="wparty" id="p1" style="color:#f00;">Player 2</td><td id="p1h" title="">Good</td></tr>
+	<tr><td class="wparty" id="p2" style="color:#080;">Player 3</td><td id="p2h" title="">Good</td></tr>
+	<tr><td class="wparty" id="p3" style="color:#00f;">Player 4</td><td id="p3h" title="">Good</td></tr>
+	<tr><td class="wparty" id="p4" style="color:#f48;">Player 5</td><td id="p4h" title="">Good</td></tr>
+	<tr><td class="wparty" id="p5" style="color:#000;">Player 6</td><td id="p5h" title="">Good</td></tr>
+	</table>
+	<br />
+		<button onclick="changeCanvas(sceneTest, testDia, fadeOut);">Debug Canvas</button>
+		<br/>
+		<br/>
+		<textarea class="diary" id="diary"></textarea>
+	</div>
+</div>
+
+<input id="ccon" class="cheatconsole" onkeypress="inputCheat(event)"></input>
+
+		<div class="guiwindow" style="width:500px;" id="buyinvwindow">
+<div class="guiwindowhead">Buy Inventory
+<div class="guiwindowbutton" onclick="hideWindow('buyinvwindow')">X</div></div>
+<p style="text-align:center;">Select items to buy!</p>
+	<div class="invdiv">
+<table class="invtable" id="buyinv">
+<tr><td class="small">You</td>
+<td class="small">Max</td>
+<td class="smallleft">Buy</td>
+<td>Item Name</td>
+<td class="medium">Unit Cost</td>
+<td class="small">Cost</td></tr>
+</table>
+	</div>
+<p style="text-align:center;">You Have: $<span id="buyinvplayermoney">0</span> ----
+Total Cost: $<span id="buyinvsumtotal">0</span><br /><br />
+<button id="buyinvbuybutton">Buy</button>
+<button onclick="hideWindow('buyinvwindow')">Cancel</button></p>
+		</div>
+
+		<div class="guiwindow" style="width:500px;" id="playerinvwindow">
+<div class="guiwindowhead">Player Inventory
+<div class="guiwindowbutton" onclick="hideWindow('playerinvwindow')">X</div></div>
+<p style="text-align:center;">List of all the player's items.</p>
+	<div class="invdiv">
+<table class="invtable" id="playerinv">
+<tr><td class="smallleft">Amt</td>
+<td>Item Name</td>
+<td class="medium">Weight</td></tr>
+</table>
+	</div>
+<p style="text-align:center;">You Have: $<span id="playerinvplayermoney">0</span> ---
+Total Weight (lbs): <span id="playerinvweight">00</span><br /><br />
+<button onclick="hideWindow('playerinvwindow')">Cancel</button></p>
+		</div>
+
+		<div class="guiwindow" id="creditswindow" style="width:600px;height:400px;">
+<div class="guiwindowhead">
+<img src="images/minivol_logo.png" onclick="showDBC();" style="position:absolute;left:5px;top:5px;border:1px solid #000;"></img>
+Credits!
+<div class="guiwindowbutton" onclick="hideWindow('creditswindow')">X</div></div>
+<div style="width:50%;overflow:auto;">
+<p style="text-align:center;">Recreated by Volante. Original by MECC.
+<br /><br />
+<b>Special Thanks to</b>
+<br />Tim for being Tim
+<br />Tininsteelian for dead icons and sounds
+<br />MECC for the Oregon Trail.
+<br /><br />Rights are given to respectful owners.<br />Please don't sue me!<br />
+</p>
+</div>
+<div style="background:#fff;width:45%;position:absolute;top:32px;right:6px;text-align:center;">
+	<div style="position:relative;bottom:-4px;">
+	<img src="images/snoopdancin.gif" width="75%" height="75%"></img></div>
+</div>
+		</div>
+
+		<div class="guiwindow" style="width:496px;height:256px;" id="notwindow">
+		<div class="guiwindowhead">Notification
+		<div class="guiwindowbutton" onclick="hideWindow('notwindow')">X</div></div>
+<div id="notmessage" style="margin-top:24px;background:#e8d29c;text-align:center;"></div>
+		<div style="width:inherit;position:absolute;bottom:4px;text-align:center;">
+		<button onclick="hideWindow('notwindow');">Ok</button></div>
+		</div>
+		
+		<div class="guiwindow" style="width:600px;height:400px;" id="wsettingswindow">
+		<div class="guiwindowhead">Wagon Settings
+		<div class="guiwindowbutton" onclick="hideWindow('wsettingswindow')">X</div></div>
+		<p style="text-align:center;">Select and change the options of the wagon!</p>
+<div style="margin:auto;height:260px;background:#e8d29c;">
+Wagon Pace: 
+<button id="wspace0" style="border:2px inset #e1a858;" onclick="wagonPace(0);">Steady</button>
+and Strenuous??
+<button id="wspace1" style="border:2px outset #e1a858;" onclick="wagonPace(1);">Grueling</button>
+<br/>
+Rations: <button onclick="">Medium</button>
+<br/>
+</div>
+		<div style="width:inherit;position:absolute;bottom:4px;text-align:center;">
+		<button onclick="hideWindow('wsettingswindow');">Close</button></div>
+		</div>
+		
+		<div class="guiwindow" style="width:400px;height:128px;" id="wrestwindow">
+		<div class="guiwindowhead">Rest
+		<div class="guiwindowbutton" onclick="hideWindow('wrestwindow')">X</div></div>
+<div style="margin:auto;height:48px;background:#e8d29c;padding-top:8px;text-align:center;">
+Rest for
+<input type="number" value="0" min="0" max="14" style="width:48px;" /> Days
+</div>
+		<div style="width:inherit;position:absolute;bottom:4px;text-align:center;">
+		<button>Rest</button>
+		<button onclick="hideWindow('wrestwindow');">Close</button>
+		</div>
+		</div>
+
+<div class="chatthing">
+<div class="chatbox">
+Change your color in the chat to either...
+<br/><span style="font-size:1.2em;">
+<span style="position:relative;"><span id="cn1" style="color:#f00;">red</span><div id="cl1" class="logo" ></div></span>,
+<span style="position:relative;"><span id="cn2" style="color:#080;">green</span><div id="cl2" class="logo"></div></span>,
+<span style="position:relative;"><span id="cn3" style="color:#00f;">blue</span><div id="cl3" class="logo"></div></span>, or
+<span style="position:relative;"><span id="cn4" style="color:#f88;">pink</span><div id="cl4" class="logo"></div></span> to join in!
+<span style="font-size:10pt;width:100px;position:absolute;top:13px;right:10px;">...or 
+<span style="position:relative;"><span id="cn5">subscribe</span><div id="cl5" class="logo2"></div></span>!</span></span>
+<br/>
+<span style="font-size:1.25em;line-height:25px;">No Challenge!</span>
+</div>
+</div>
+
+<div class="discont">
+<span class="disclaim"><span id="dver">Javascript is blocked, or broken!</span></span>
+<div style="float:right;"><span id="dbopvalue" style="color:#888;float:left;visibility:hidden;" class="disclaim">0.0</span>
+<input style="visibility:hidden;float:right;width:96px;" id="dbop" type="range" step="0.1" min="0" max="1" value="1"></input></div>
+</div>
+
+<div class="bsodoverlay" id="bsod">
+<div class="bsodtexttitle">CRITICAL ERROR</div>
+<pre class="bsodtext">
+:/. STOP: 0x01428571 (0xf8a8beef, 0xb19b00b5, 0x4b1db0b0, 0xb01a8fe0)
+BAD_FUNC_HEADER
+
+ISPID: Unknown SYSVER: <span id="bsodver">0.0.0 wow you really did break it</span>
+
+JS Base  Position - Name               JS Base  Position - Name
+80100000 00000001 - version.var        80100000 00000024 - runThis.func
+80100000 00000166 - nothing.func       8010000f 00000168 - sceneTest.var
+80100011 0000017f - indyAW.var         80100003 000001fc - changeCanvas.func
+002f0010 22e09000 - trail_game.html    fffffff2 00f1000c - timetravel.js
+
+Address variable dump                                    - Name
+00000253 74696d69 73616275 74743030 766f6c61 6e746500    - testElement.var
+00000411 01000000 00000000 0000ffff ffffffff fffffafc    - wagonParty.var
+
+(0915148800) Stack overflow: 01100010 01110101 01110100 01110100 01110011
+
+Please wait for the script to restart.
+DO NOT TURN OFF THE POWER. DO NOT REFRESH THIS PAGE.
+Please read debug console for more information. :/. timetravel.js
+
+Restarting in 5 seconds....
+</pre>
+</div>
+
+<div class="bsoverlay" id="bs">
+Loading...
+<span style="position:fixed;bottom:0;right:0;">:/. Volante</span></div>
+<!--
+possibley make each line have a span that will be shown like its typed out
+line by line
+-->
+
+<div class="firefoxbar">
+	<div class="fficon"></div>
+	<span style="padding-left:29px;">Scripts Currently Forbidden</span>
+	<div style="float:right;padding-right:29px;">
+	<button style="font:1em arial;"><span style="text-decoration:underline;">O</span>ptions...</button>
+	<div class="ffb"></div>
+	<!-- When ever someone clicks the close button it will play the Jurassic Park "cant do that hu hu hu" -->
+	</div>
+</div>
+
+</body>
+</html>

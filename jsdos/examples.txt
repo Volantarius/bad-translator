@@ -1,0 +1,4 @@
+﻿Example of mouse encryption
+
+diarrhea, key: password
+the key can be faked with aaaaaaaak

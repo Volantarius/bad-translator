@@ -1,0 +1,90 @@
+body {margin:0;background:#222;}
+p {margin:4px;}
+
+div.gamewindow {
+background:#000;font-family:New Times Roman;cursor:default;
+width:1024px;height:600px;margin:auto;margin-top:8px;
+-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+}
+
+div.screencanvas {
+background:#fff;
+background-image:url('images/diebg.png');
+background-repeat:no-repeat;
+background-position:left top;
+color:#fff;width:640px;height:400px;
+}
+
+div.partone {float:left;}
+
+div.bottommenu {
+background:#a62;border-top:1px solid #000;
+width:640px;height:199px;
+}
+
+div.rightmenu {
+background:#a62;border-left:1px solid #000;font-size:14pt;
+width:383px;height:600px;float:right;text-align:center;
+}
+
+div.diarymenu {
+background:#0ff;border-top:1px solid #000;text-align:center;
+width:383px;height:199px;
+position:relative;float:right;left:384px;bottom:1px;
+}
+
+textarea.diary {
+resize:none;font-family:New Times Roman;font-size:12pt;
+width:95%;height:35%;
+}
+
+div.guiwindow {
+background:#ccc;border:1px solid #000;box-shadow:2px 4px 4px rgba(0,0,0,0.3);
+position:absolute;top:100px;width:500px;height:400px;z-index:1;visibility:hidden;
+-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+font-family:New Times Roman;font-size:12pt;cursor:default;
+}
+
+div.guiwindowhead {
+background:#a62;border-bottom:1px solid #000;
+width:100%;height:24px;
+color:#fff;text-align:center;font-size:14pt;text-shadow:1px 1px 0px #222,2px 2px 1px #222;
+}
+
+div.guiwindowbutton {
+background:#444;border:1px solid #000;
+width:16px;height:16px;
+position:absolute;top:3px;right:3px;font-size:10pt;
+}
+
+div.guiwindowbutton:hover {background:#48f;}
+div.guiwindowbutton:active {background:#f84;}
+
+div.invdiv {
+background:#fff;overflow:auto;
+width:100%;height:260px;margin:auto;
+}
+
+table.invtable {width:100%;}
+td.small {width:10%;text-align:right;}
+td.smallleft {width:10%;}
+td.medium {width:15%;text-align:right;}
+
+input {width:80%;}
+
+div.debugconsole {
+font-family:Courier;color:#00e58a;z-index:4;font-size:12pt;
+box-shadow:0px 0px 8px rgba(0,229,138,0.9);
+background:rgba(0,0,0,0.7);
+position:absolute;top:8px;left:8px;
+width:512px;height:256px;visibility:hidden;
+}
+div.inputbar {width:100%;position:absolute;bottom:0;right:0;}
+input.debuginput {
+font-family:Courier New;color:#00e58a;font-size:12pt;
+background:none;border:1px solid #00e58a;width:50%;
+}
+div.dbchead {
+cursor:move;background:#00e58a;color:#000;font-size:12pt;
+-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+}

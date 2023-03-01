@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<link rel="stylesheet" type="text/css" href="default.css" />
+	<head>
+		<title>JS-DOS</title>
+		<script src="script.js"></script>
+		<script src="programs.js"></script>
+		<script src="internet.js"></script>
+		<meta charset="utf-8" />
+	</head>
+<body onresize="wresize(event)" onload="consoleInit();document.getElementById('hiddenInput').focus();">
+
+<div class="main">
+	
+	<div class="console" id="main" tabindex="-1" onkeydown="consoleInput(event)" onfocus="consoleFocus(event)" onblur="consoleBlur(event)" ondblclick="consoleSelect(event)"><span id="mainecho"></span><span id="inputItself">C:\<span id="dirdisplay"></span>\&gt;<span id="fakeInput"></span></span></div>
+	
+	<div class="hideSB" id="HSB"></div>
+	
+	<br/>
+	<input id="hiddenInput" type="text" onfocus="fakeFocus(event)" onblur="fakeBlur(event)" onkeydown="fakeKeydown(event)" onkeyup="fakeKeyup(event)" style="opacity:1;z-index:20;position:fixed;top:0px;right:0px;"></input>
+	
+	<div class="dbc" id="debugConsole">Debug Console<br/></div>
+	
+</div>
+
+</body>
+</html>

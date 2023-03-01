@@ -1,0 +1,18 @@
+These are the features and functions to be removed/disabled for release.
+
+This is here mostly to remind me of the debugging tools that need to be removed before any release
+to MonotoneTim, or anyone else.
+
+Position - Name : How to
+
+519 - canvasDebug : Remove by: removing the variable and then in the canvas functions:
+					changeCanvas and addElement. Inside these functions remove the if statement
+					if (canvasDebug == 1). This will remove the ability to turn on the debug.
+
+7 - Debug Console : Remove the comment for the remove command.
+					This will remove the debug console upon trying to show the console.
+
+521 - setInterval : Remove this one line to remove the debug overlay from running.
+
+1449 - Debug Overlay : Remove the comment and allow this command to remove the overlay completely.
+					This will remove the overlay when ran and only sharp eyes can find it.

@@ -1,2 +1,2 @@
 # bad-translator
-words
+contains loads of letters and curse words

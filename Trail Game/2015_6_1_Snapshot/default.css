@@ -1,0 +1,255 @@
+@font-face {font-family:Comic Sans;src:url(comic.ttf);}
+@font-face {font-family:Decima;src:url(decimamono-light-webfont.ttf);}
+
+body {margin:0;background:#222;}
+p {margin:4px;}
+
+button {
+background:#e8d29c;font-family:Times New Roman;font-size:10pt;
+border:2px outset #e1a858;
+}
+button:active {border:2px inset #e1a858;}
+button:focus {outline:none;}
+input:focus {outline:none;}
+
+div.gamewindow {
+background:#000;font-family:Times New Roman;cursor:default;
+width:852px;height:558px;margin:auto;margin-top:16px;
+-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+}
+
+div.screencontainer {
+color:#fff;position:relative;
+}
+
+div.screencanvas {
+background:#fff;
+/*background-image:url('images/diebg.png');*/
+background-repeat:no-repeat;
+background-position:left top;
+position:relative;
+color:#fff;width:596px;height:358px;
+}
+
+div.partone {float:left;}
+
+div.bottommenu {
+background:#b87331;border-top:1px solid #000;
+width:596px;height:199px;
+}
+
+div.rightmenu {
+background:#b87331;border-left:1px solid #000;font-size:12pt;
+width:255px;height:358px;float:right;text-align:center;
+}
+
+div.diarymenu {
+background:#b87331;border-top:0px solid #0ff;border-left:1px solid #000;
+text-align:center;
+width:255px;height:200px;
+position:relative;float:right;
+}
+
+textarea.diary {
+resize:none;font-family:New Times Roman;font-size:12pt;
+width:95%;height:40%;
+}
+
+div.guiwindow {
+background:#e1a858;border:1px solid #000;box-shadow:2px 4px 4px rgba(0,0,0,0.3);
+position:absolute;top:100px;width:500px;height:400px;z-index:3;visibility:hidden;
+-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+font-family:Times New Roman;font-size:12pt;cursor:default;
+}
+
+div.guiwindowhead {
+background:#b87331;border-bottom:1px solid #000;
+width:100%;height:24px;
+color:#fff;text-align:center;font-size:14pt;text-shadow:1px 1px 0px #222,2px 2px 1px #222;
+}
+
+div.guiwindowbutton {
+background:#b87331;border:2px outset #b87331;
+width:16px;height:16px;
+position:absolute;top:2px;right:3px;font-size:10pt;
+}
+
+div.guiwindowbutton:active {border:2px inset #b87331;}
+
+div.invdiv {
+background:#e8d29c;overflow:auto;
+width:100%;height:260px;margin:auto;
+}
+
+table.invtable {width:100%;}
+td.small {width:10%;text-align:right;}
+td.smallleft {width:10%;}
+td.medium {width:15%;text-align:right;}
+
+input {width:80%;}
+
+div.canvaselement {
+color:#fff;
+text-shadow:1px 1px 1px #000, -1px 1px 1px #000, 0px 0px 2px #000, 0px 0px 2px #000;
+font-family:Courier New;font-size:10pt;
+background-repeat:no-repeat;
+background-position:left top;
+position:absolute;width:10px;height:10px;
+z-index:1;
+}
+
+/* CHEAT CONSOLE */
+input.cheatconsole {
+border:none;font-family:Comic Sans;font-size:12pt;
+background:#425d5a;color:#fff;width:256px;z-index:3;
+position:absolute;left:16px;top:24px;
+visibility:hidden;
+box-shadow:1px 2px 2px rgba(0,0,0,0.5);
+}
+
+td.wparty {width:50%;}
+
+button.diabutton {width:80%;}
+
+/*
+button.diabuttonina {
+background:#f00;font-family:Times New Roman;font-size:10pt;
+border:2px outset #e1a858;
+}
+button.diabuttonina:active {border:2px inset #e1a858;}
+*/
+
+div.dtxtcenter {
+background:#e8d29c;box-shadow:2px 2px 2px rgba(0,0,0,0.6);
+width:90%;height:95%;
+margin:auto;margin-top:4px;
+font-size:14pt;text-align:center;
+}
+
+div.diaselect {
+text-align:center;
+height:146px;overflow:auto;
+}
+
+table.wpartytable {
+background:#e8d29c;box-shadow:2px 2px 2px rgba(0,0,0,0.6);
+width:80%;margin:auto;
+}
+
+div.chatthing/* suddenly my coding habbits changed! */
+{
+	background:#b87331;font-family:Times New Roman;cursor:default;
+	width:852px;margin:auto;margin-top:1px;padding-top:8px;padding-bottom:8px;
+}
+
+div.chatbox
+{
+	background:#e8d29c;box-shadow:2px 2px 2px rgba(0,0,0,0.6);
+	width:800px;padding-top:4px;padding-bottom:4px;position:relative;
+	margin:auto;
+	font-size:16pt;text-align:center;
+}
+
+div.discont
+{
+	cursor:default;
+	width:852px;margin:auto;margin-top:1px;
+	padding-top:2px;
+	-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+}
+
+span.disclaim{font:0.8em decima;color:#666;}
+
+/* Progress Scene Stuff */
+div.pssbg {
+visibility:hidden;
+background:rgba(255,0,0,0.25);
+background-image:url('images/trailbgtest.png');
+background-repeat:repeat;
+position:absolute;
+z-index:1;
+height:358px;width:596px;top:0px;left:0px;
+-webkit-transition: background-position 2.4s linear;
+-moz-transition: background-position 2.4s linear;
+}
+
+div.psswagon {
+visibility:hidden;
+background:rgba(0,0,0,0.25);
+background-image:url('images/prog/wagon.png');
+background-repeat:no-repeat;
+background-position:left top;
+position:absolute;
+z-index:2;
+height:50px;width:140px;top:230px;left:450px;
+}
+
+div.pssdest {
+visibility:hidden;
+background:rgba(0,255,0,0.25);
+background-repeat:no-repeat;
+background-position:left top;
+position:absolute;
+z-index:2;
+height:192px;width:100px;
+top:166px;left:20px; /* Must be edited in the html file itself not here */
+-webkit-transition: left 2.4s linear;
+-moz-transition: left 2.4s linear;
+}
+
+/* Gravestone */
+
+div.gravestone {
+visibility:hidden;
+color:#000;text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+text-align:center;
+background:rgba(0,0,0,0.25);
+background-repeat:no-repeat;
+background-position:left top;
+position:absolute;
+z-index:1;
+height:192px;width:128px;top:166px;left:234px;
+}
+
+/* DEBUG MENU */
+div.debugconsole {
+font-family:decima;color:#00e58a;z-index:7;font-size:0.8em;
+box-shadow:0px 0px 8px rgba(0,229,138,0.9);
+background:rgba(0,0,0,0.7);
+position:absolute;top:8px;left:8px;
+width:750px;height:200px;visibility:hidden;
+}
+div.inputbar {width:100%;position:absolute;bottom:0;right:0;}
+input.debuginput {
+font-family:decima;color:#00e58a;font-size:12pt;
+background:none;border:1px solid #00e58a;width:50%;
+}
+button.newbut {
+color:#00e58a;border:1px solid #00e58a;background:none;font-family:decima;font-size:12pt;
+}
+div.dbchead {
+cursor:move;background:#00e58a;color:#000;font-size:12pt;font-weight:bold;
+-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;
+}
+
+div.dbscanvas {
+position:absolute;z-index:6;color:#00e58a;font:0.8em decima;
+background-color:rgba(0,0,0,0.7);
+pointer-events:none;
+visibility:hidden;
+}
+
+div.overlay {
+z-index:12;position:fixed;top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.0);
+visibility:hidden;
+pointer-events:none;
+}
+
+div.randombar {
+position:fixed;
+top:0px;left:0px;
+width:100%;height:20px;
+background:#fff;
+}

@@ -1,0 +1,45 @@
+html {height:100%;}
+
+body
+{
+	margin:0;
+	height:90%;
+}
+
+div.main
+{
+	margin:2.5%;
+	text-align:center;
+	height:100%;
+}
+
+textarea
+{
+	clear:both;
+	width:80%;height:45%;
+	resize:none;
+	font:1.5em Arial;
+}
+
+div.output
+{
+	width:80%;height:45%;
+	font:1.5em Arial;
+	border-top:1px solid #abadb3;
+	border-left:1px solid #e2e3ea;
+	border-bottom:1px solid #e3e9ef;
+	border-right:1px solid #dbdfe6;
+	margin-left:auto;margin-right:auto;
+	padding:2px;text-align:left;
+	-moz-appearance:textfield-multiline;
+	overflow:auto;
+	margin-top:2.5%;
+}
+
+div.output:hover
+{
+	border-top:1px solid #5794bf;
+	border-left:1px solid #c5daed;
+	border-bottom:1px solid #c7e2f1;
+	border-right:1px solid #b7d5ea;
+}

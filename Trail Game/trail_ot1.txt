@@ -1,0 +1,17 @@
+Gravestones:
+711: Here lies Tim: The $43 is behind the gravestone.
+
+Kansas River Crossing: 102
+Big Blue River Crossing: 83
+Fort Kearney: 120
+Chimney Rock: 250
+Fort Laramie: 61
+Independence Rock: 190
+South Pass 102
+Green River Crossing: 125
+Soda Springs: 144
+Fort Hall: 57
+Snake River Crossing: 182
+Fort Boise: 114
+Grande Ronde: 160
+The Dalles: 125

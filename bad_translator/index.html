@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<link rel="stylesheet" type="text/css" href="default.css" />
+	<head><title>Fake Bad Translator</title>
+	<script src="script.js"></script><meta charset="utf-8" /></head>
+<body onload="">
+
+<div class="translator_left">
+	Translator Input<br/>
+	<textarea id="inText" rows="4" cols="50" style="resize:none;font:0.75em Arial;width:95%;"></textarea>
+	<br/><br/>
+	Translator Output<br/>
+	<textarea id="outText" rows="4" cols="50" style="resize:none;font:0.75em Arial;width:95%;"></textarea>
+	<br/><br/>
+	Decode Input<br/>
+	<textarea id="decodeUniIn" rows="4" cols="50" style="resize:none;font:0.75em Arial;width:95%;"></textarea>
+	Decode Output<br/>
+	<textarea id="decodeUniOut" rows="4" cols="50" style="resize:none;font:0.75em Arial;width:95%;"></textarea>
+	<button onclick="decodeUnicode();">Decode</button> <button onclick="encodeUnicode();">Encode</button>
+</div>
+
+<div class="translator_right">
+		<br/><button onclick="randomconvert();">Bad Translation</button>
+		<button onclick="crapconvert();">Bad Spelling Translation</button>
+		<br/><button onclick="romajiTranslate();">Romaji Translation</button>
+	<br/><br/>
+		<button onclick="filterAllNoWidthSpace();">Filter with No Width Spaces</button>
+	<br/><br/>
+		
+		Replace
+		<input id="replaceIn" class="property" type="text" value="2" maxlength="6"></input>
+		with
+		<input id="replaceWith" class="property" type="text" value="2" maxlength="6"></input>
+		<button onclick="replaceCharacters();">Translate</button>
+		<input id="replaceUni1" type="checkbox"></input><span style="font-size:16pt;">&#9786;</span>
+		<input id="replaceUni2" type="checkbox"></input><span style="font-size:16pt;">&#9786;</span>
+		
+	<br/><br/>
+		
+		Keep
+		<input id="insertIn" class="property" type="text" value="2" maxlength="6"></input>
+		Insert
+		<input id="insertWith" class="property" type="text" value="2" maxlength="6"></input>
+		<button onclick="insertCharacters();">Translate</button>
+		<input id="insertUni1" type="checkbox"></input><span style="font-size:16pt;">&#9786;</span>
+		<input id="insertUni2" type="checkbox"></input><span style="font-size:16pt;">&#9786;</span>
+		<input id="insertType" type="checkbox"></input>F/B
+		
+	<br/><br/>
+		Start
+		<input id="bendStart" class="property" type="text" value="2" maxlength="6"></input>
+		End
+		<input id="bendEnd" class="property" type="text" value="2" maxlength="6"></input>
+		<button onclick="bendCharacters();">Translate</button>
+		<input id="bendUni1" type="checkbox"></input><span style="font-size:16pt;">&#9786;</span>
+		<input id="bendUni2" type="checkbox"></input><span style="font-size:16pt;">&#9786;</span>
+		<input id="bendAppend1" type="checkbox"></input>S
+		<input id="bendAppend2" type="checkbox"></input>E
+		
+	<br/><br/>
+		
+		<div class="tablebox">
+		<table cellspacing="0">
+			<tr><td><span style="font-size:0.5em;">NO WIDTH SPACE</span></td>
+			<td>200B</td></tr>
+			
+			<tr><td><span style="font-size:0.5em;">NO WIDTH SPACE 2</span></td>
+			<td>200C</td></tr>
+			
+			<tr><td><span style="font-size:0.5em;">NO WIDTH SPACE 3</span></td>
+			<td>200D</td></tr>
+			
+			<tr><td><span style="font-size:0.5em;">NO WIDTH SPACE 4</span></td>
+			<td>034F</td></tr>
+			
+			<tr><td><span style="font-size:0.5em;">REVERSE TXT</span></td>
+			<td>202E</td></tr>
+			
+			<!--
+			2ff0 to 2ffb
+			-->
+			
+			<tr><td>&#x263a;</td>
+			<td>263A</td></tr>
+			
+			<tr><td>&#175;</td>
+			<td>00AF</td></tr>
+			
+			<tr><td>&#448;</td>
+			<td>01C0</td></tr>
+			
+			<tr><td>&#449;</td>
+			<td>01C1</td></tr>
+			
+			<tr><td>m&#x20D0;</td>
+			<td>20D0</td></tr>
+			
+			<tr><td>m&#x20D1;</td>
+			<td>20D1</td></tr>
+			
+			<tr><td>m&#x20D2;</td>
+			<td>20D2</td></tr>
+			
+			<tr><td>m&#x20D3;</td>
+			<td>20D3</td></tr>
+			
+			<tr><td>m&#x20D4;</td>
+			<td>20D4</td></tr>
+			
+			<tr><td>m&#x20D5;</td>
+			<td>20D5</td></tr>
+			
+			<tr><td>m&#x20D6;</td>
+			<td>20D6</td></tr>
+			
+			<tr><td>m&#x20D7;</td>
+			<td>20D7</td></tr>
+			
+			<tr><td>m&#x20D8;</td>
+			<td>20D8</td></tr>
+			
+			<tr><td>m&#x20D9;</td>
+			<td>20D9</td></tr>
+			
+			<tr><td>m&#x20DA;</td>
+			<td>20DA</td></tr>
+			
+			<tr><td>m&#x20DB;</td>
+			<td>20DB</td></tr>
+			
+			<tr><td>m&#x20DC;</td>
+			<td>20DC</td></tr>
+			
+			<tr><td>m&#x20DD;</td>
+			<td>20DD</td></tr>
+			
+			<tr><td>m&#x20DE;</td>
+			<td>20DE</td></tr>
+			
+			<tr><td>m&#x20DF;</td>
+			<td>20DF</td></tr>
+			
+			<tr><td>m&#x20E1;</td>
+			<td>20E1</td></tr>
+			
+			<tr><td>m&#xFE20;</td>
+			<td>FE20</td></tr>
+			
+			<tr><td>m&#xFE21;</td>
+			<td>FE21</td></tr>
+			
+			<tr><td>m&#xFE22;</td>
+			<td>FE22</td></tr>
+			
+			<tr><td>m&#xFE23;</td>
+			<td>FE23</td></tr>
+			
+			<!--             -->
+			
+			<tr><td>m&#768;</td>
+			<td>0300</td></tr>
+			
+			<tr><td>m&#769;</td>
+			<td>0301</td></tr>
+			
+			<tr><td>m&#770;</td>
+			<td>0302</td></tr>
+			
+			<tr><td>m&#771;</td>
+			<td>0303</td></tr>
+			
+			<tr><td>m&#772;</td>
+			<td>0304</td></tr>
+			
+			<tr><td>m&#773;</td>
+			<td>0305</td></tr>
+			
+			<tr><td>m&#774;</td>
+			<td>0306</td></tr>
+			
+			<tr><td>m&#775;</td>
+			<td>0307</td></tr>
+			
+			<tr><td>m&#776;</td>
+			<td>0308</td></tr>
+			
+			<tr><td>m&#777;</td>
+			<td>0309</td></tr>
+			
+			<tr><td>m&#778;</td>
+			<td>030A</td></tr>
+			
+			<tr><td>m&#779;</td>
+			<td>030B</td></tr>
+			
+			<tr><td>m&#780;</td>
+			<td>030C</td></tr>
+			
+			<tr><td>m&#781;</td>
+			<td>030D</td></tr>
+			
+			<tr><td>m&#782;</td>
+			<td>030E</td></tr>
+			
+			<tr><td>m&#783;</td>
+			<td>030F</td></tr>
+			
+			<tr><td>m&#784;</td>
+			<td>0310</td></tr>
+			
+			<tr><td>m&#785;</td>
+			<td>0311</td></tr>
+			
+			<tr><td>m&#786;</td>
+			<td>0312</td></tr>
+			
+			<tr><td>m&#787;</td>
+			<td>0313</td></tr>
+			
+			<tr><td>m&#788;</td>
+			<td>0314</td></tr>
+			
+			<tr><td>m&#789;</td>
+			<td>0315</td></tr>
+			
+			<tr><td>m&#790;</td>
+			<td>0316</td></tr>
+			
+			<tr><td>m&#791;</td>
+			<td>0317</td></tr>
+			
+			<tr><td>m&#792;</td>
+			<td>0318</td></tr>
+			
+			<tr><td>m&#793;</td>
+			<td>0319</td></tr>
+			
+			<tr><td>m&#794;</td>
+			<td>031A</td></tr>
+			
+			<tr><td>m&#795;</td>
+			<td>031B</td></tr>
+			
+			<tr><td>m&#796;</td>
+			<td>031C</td></tr>
+			
+			<tr><td>m&#816;</td>
+			<td>0330</td></tr>
+			
+			<tr><td>m&#817;</td>
+			<td>0331</td></tr>
+			
+			<tr><td>m&#818;</td>
+			<td>0332</td></tr>
+			
+			<tr><td>m&#819;</td>
+			<td>0333</td></tr>
+			
+			<tr><td>m&#823;</td>
+			<td>0337</td></tr>
+			
+			<tr><td>m&#824;</td>
+			<td>0338</td></tr>
+			
+			<tr><td>m&#867;</td>
+			<td>0363</td></tr>
+			
+			<tr><td>m&#868;</td>
+			<td>0364</td></tr>
+			
+			<tr><td>m&#869;</td>
+			<td>0365</td></tr>
+			
+			<tr><td>m&#870;</td>
+			<td>0366</td></tr>
+			
+			<tr><td>m&#871;</td>
+			<td>0367</td></tr>
+			
+			<tr><td>m&#872;</td>
+			<td>0368</td></tr>
+			
+			<tr><td>m&#873;</td>
+			<td>0369</td></tr>
+			
+			<tr><td>m&#874;</td>
+			<td>036A</td></tr>
+			
+			<tr><td>m&#875;</td>
+			<td>036B</td></tr>
+			
+			<tr><td>m&#876;</td>
+			<td>036C</td></tr>
+			
+			<tr><td>m&#877;</td>
+			<td>036D</td></tr>
+			
+			<tr><td>m&#878;</td>
+			<td>036E</td></tr>
+			
+			<tr><td>m&#879;</td>
+			<td>036F</td></tr>
+			
+			<tr><td>&#6145;</td>
+			<td>1801</td></tr>
+			
+			<!--  supscript letters  -->
+			
+			<tr><td>m&#8305;</td>
+			<td>2071</td></tr>
+			
+			<tr><td>m&#8319;</td>
+			<td>207F</td></tr>
+			
+			<tr><td>m&#688;</td>
+			<td>02B0</td></tr>
+			
+			<tr><td>m&#690;</td>
+			<td>02B2</td></tr>
+			
+			<tr><td>m&#691;</td>
+			<td>02B3</td></tr>
+			
+			<tr><td>m&#695;</td>
+			<td>02B7</td></tr>
+			
+			<tr><td>m&#696;</td>
+			<td>02B8</td></tr>
+			
+			<!--  subscript letters  -->
+			
+			<tr><td>m&#8336;</td>
+			<td>2090</td></tr>
+			
+			<tr><td>m&#8337;</td>
+			<td>2091</td></tr>
+			
+			<tr><td>m&#8338;</td>
+			<td>2092</td></tr>
+			
+			<tr><td>m&#8339;</td>
+			<td>2093</td></tr>
+			
+			<tr><td>m&#8340;</td>
+			<td>2094</td></tr>
+			
+			<!--   numbers    -->
+			
+			<tr><td>m&#8304;</td>
+			<td>2070</td></tr>
+			
+			<tr><td>m&#185;</td>
+			<td>00B9</td></tr>
+			
+			<tr><td>m&#178;</td>
+			<td>00B2</td></tr>
+			
+			<tr><td>m&#179;</td>
+			<td>00B3</td></tr>
+			
+			<tr><td>m&#8308;</td>
+			<td>2074</td></tr>
+			
+			<tr><td>m&#8309;</td>
+			<td>2075</td></tr>
+			
+			<tr><td>m&#8310;</td>
+			<td>2076</td></tr>
+			
+			<tr><td>m&#8311;</td>
+			<td>2077</td></tr>
+			
+			<tr><td>m&#8312;</td>
+			<td>2078</td></tr>
+			
+			<tr><td>m&#8313;</td>
+			<td>2079</td></tr>
+			
+			<tr><td>m&#8314;</td>
+			<td>207A</td></tr>
+			
+			<tr><td>m&#8315;</td>
+			<td>207B</td></tr>
+			
+			<tr><td>m&#8316;</td>
+			<td>207C</td></tr>
+			
+			<tr><td>m&#8317;</td>
+			<td>207D</td></tr>
+			
+			<tr><td>m&#8318;</td>
+			<td>207E</td></tr>
+			
+			<tr><td>m&#8320;</td>
+			<td>2080</td></tr>
+			
+			<tr><td>m&#8321;</td>
+			<td>2081</td></tr>
+			
+			<tr><td>m&#8322;</td>
+			<td>2082</td></tr>
+			
+			<tr><td>m&#8323;</td>
+			<td>2083</td></tr>
+			
+			<tr><td>m&#8324;</td>
+			<td>2084</td></tr>
+			
+			<tr><td>m&#8325;</td>
+			<td>2085</td></tr>
+			
+			<tr><td>m&#8326;</td>
+			<td>2086</td></tr>
+			
+			<tr><td>m&#8327;</td>
+			<td>2087</td></tr>
+			
+			<tr><td>m&#8328;</td>
+			<td>2088</td></tr>
+			
+			<tr><td>m&#8329;</td>
+			<td>2089</td></tr>
+			
+			<tr><td>m&#8330;</td>
+			<td>208A</td></tr>
+			
+			<tr><td>m&#8331;</td>
+			<td>208B</td></tr>
+			
+			<tr><td>m&#8332;</td>
+			<td>208C</td></tr>
+			
+			<tr><td>m&#8333;</td>
+			<td>208D</td></tr>
+			
+			<tr><td>m&#8334;</td>
+			<td>208E</td></tr>
+			
+			<!--              -->
+			
+			<tr><td>&#xfffc;</td>
+			<td>FFFC</td></tr>
+			
+			<tr><td>&#xfffd;</td>
+			<td>FFFD</td></tr>
+			
+		</table>
+		</div>
+		
+	<br/><br/>
+		
+	<div id="temp" class="tmp"></div>
+		
+</div>
+
+</body>
+</html>

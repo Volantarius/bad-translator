@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<link rel="stylesheet" type="text/css" href="default.css" />
+<head><title>Trail Game Test</title>
+<script src="mainscript.js"></script><meta charset="utf-8" /></head>
+<body onload="changeCanvas(sceneTest, testDia);clearDiary();calcWeather();updateDate();dbcWrite('Ran body scripts.');">
+
+<div class="overlay" id="overlay">
+<div class="randombar" id="rb1"></div>
+<div class="randombar" id="rb2"></div>
+<div class="randombar" id="rb3"></div>
+<div class="randombar" id="rb4"></div>
+<div class="randombar" id="rb5"></div>
+<div class="randombar" id="rb6"></div>
+<div class="randombar" id="rb7"></div>
+<div class="randombar" id="rb8"></div>
+<div class="randombar" id="rb9"></div>
+<div class="randombar" id="rb10"></div>
+
+<div class="randombar" id="rb11"></div>
+<div class="randombar" id="rb12"></div>
+<div class="randombar" id="rb13"></div>
+<div class="randombar" id="rb14"></div>
+<div class="randombar" id="rb15"></div>
+<div class="randombar" id="rb16"></div>
+<div class="randombar" id="rb17"></div>
+<div class="randombar" id="rb18"></div>
+<div class="randombar" id="rb19"></div>
+<div class="randombar" id="rb20"></div>
+</div>
+
+<div class="debugconsole" id="dbw">
+<div class="dbchead" id="dbchead">Debug Console</div>
+<div id="dbscr" style="overflow:auto;height:148px;">
+<pre id="consolewindow" style="margin:0;font-family:decima;">
+<span style="color:#fff;">Monotone Trail ver: 4.20
+Created and Written by Volante.</span>
+</pre></div>
+<div class="inputbar">
+<input type="text" class="debuginput" id="dbi" onkeypress="keyHandle(event)"></input>
+<button class="newbut" onclick="inputDebug()">Input</button>
+<button class="newbut" onclick="hideWindow('dbw')">Close Window</button></div>
+</div>
+
+<div class="gamewindow">
+
+<div class="partone">
+		<div class="screencontainer">
+<div class="gravestone" id="grave">I HONK FOR CHOLERA</div>
+
+<div class="pssbg" id="psbg" style="background-position:0px 0px;"></div>
+<div class="psswagon" id="pswagon" onclick=""></div><!-- THE WAgON Of TiME -->
+<div class="pssdest" id="psdest" style="left:20px;"></div>
+		<div id="gamecanvas" class="screencanvas"></div>
+		</div>
+
+<div class="bottommenu">
+		<div style="height:49px;">
+<div class="dtxtcenter" id="dtitle">Test</div>
+		</div>
+		<div class="diaselect" id="dmenu"></div>
+</div>
+</div>
+
+	<div class="rightmenu">
+	<span id="date" style="font-weight:bold;">DATE</span><br />
+	<span id="weather">Sunny</span>, <span id="temp">98</span>&deg; F<br />
+	<br />
+	<span id="dtraveled">0</span> miles Traveled<br />
+	<span id="nxtdist">0</span> miles till <span id="nxtloc">asd</span><br /><br />
+	Morale is High<br />
+	No Meat<br />
+	No Vegtables<br />
+	<br />
+	<table class="wpartytable">
+	<tr><td class="wparty" id="p0" style="color:#000;">Tim</td><td id="p0h">Good</td></tr>
+	<tr><td class="wparty" id="p1" style="color:#f00;">Team Red</td><td id="p1h">Good</td></tr>
+	<tr><td class="wparty" id="p2" title="Died of: Dysentery&#13;lol: Butt" style="color:#080;">Team Green</td><td id="p2h" style="color:#f00;">Dead</td></tr>
+	<tr><td class="wparty" id="p3" style="color:#00f;">Team Blue</td><td id="p3h">Good</td></tr>
+	<tr><td class="wparty" id="p4" style="color:#f48;">Team Pink</td><td id="p4h">Good</td></tr>
+	<tr><td class="wparty" id="p5" style="color:#000;">Subscribers</td><td id="p5h">Good</td></tr>
+	</table>
+	</div>
+		<div class="diarymenu">
+		<br />
+			<button onclick="changeCanvas(sceneTest,testDia);">Travel Pace</button> <button onclick="showCredits();">Rations</button><br />
+		<br />
+			<textarea class="diary" id="diary"></textarea>
+		</div>
+
+</div>
+
+<input id="ccon" class="cheatconsole" onkeypress="inputCheat(event)"></input>
+
+		<div class="guiwindow" style="width:500px;" id="buyinvwindow">
+<div class="guiwindowhead">Buy Inventory
+<div class="guiwindowbutton" onclick="hideWindow('buyinvwindow')">X</div></div>
+<p style="text-align:center;">Select items to buy!</p>
+	<div class="invdiv">
+<table class="invtable" id="buyinv">
+<tr><td class="small">You</td>
+<td class="small">Max</td>
+<td class="smallleft">Buy</td>
+<td>Item Name</td>
+<td class="medium">Unit Cost</td>
+<td class="small">Cost</td></tr>
+</table>
+	</div>
+<p style="text-align:center;">You Have: $<span id="buyinvplayermoney">0</span> ----
+Total Cost: $<span id="buyinvsumtotal">0</span><br /><br />
+<button id="buyinvbuybutton">Buy</button>
+<button onclick="hideWindow('buyinvwindow')">Cancel</button></p>
+		</div>
+
+		<div class="guiwindow" style="width:500px;" id="playerinvwindow">
+<div class="guiwindowhead">Player Inventory
+<div class="guiwindowbutton" onclick="hideWindow('playerinvwindow')">X</div></div>
+<p style="text-align:center;">List of all the player's items.</p>
+	<div class="invdiv">
+<table class="invtable" id="playerinv">
+<tr><td class="smallleft">Amt</td>
+<td>Item Name</td>
+<td class="medium">Weight</td></tr>
+</table>
+	</div>
+<p style="text-align:center;">You Have: $<span id="playerinvplayermoney">0</span> ---
+Total Weight(lbs): 000<br /><br />
+<button onclick="hideWindow('playerinvwindow')">Cancel</button></p>
+		</div>
+
+		<div class="guiwindow" id="creditswindow" style="width:600px;height:400px;">
+<div class="guiwindowhead">
+<img src="images/minivol_logo.png" style="position:absolute;left:5px;top:5px;border:1px solid #000;"></img>
+Credits!
+<div class="guiwindowbutton" onclick="hideWindow('creditswindow')">X</div></div>
+<div style="width:50%;overflow:auto;">
+<div style="width:50%;overflow:auto;float:right;">
+<p style="text-align:center;">Oregon Browser Trail<br />version 4.2.0</p>
+</div>
+<p style="text-align:center;">Recreated by Volante.<br />
+Original by MECC.<br />And stuff!<br /><br />
+Special thanks to:<br />Tim for being Tim<br />
+Murugo ........<br />MECC for the Oregon Trail.<br /><br />
+Rights are given to respectful owners.<br />Please don't sue me!<br />
+</p>
+</div>
+<div style="background:#fff;width:40%;position:absolute;top:32px;right:6px;text-align:center;">
+<div style="position:relative;bottom:-27px;">
+<img src="images/snoopdancin.gif" width="75%" height="75%"></img></div>
+<button style="position:relative;bottom:-50px;" onclick="showDBC();">Open Debug Menu</button></div>
+		</div>
+
+		<div class="guiwindow" style="width:496px;height:256px;" id="notwindow">
+		<div class="guiwindowhead">Notification
+		<div class="guiwindowbutton" onclick="hideWindow('notwindow')">X</div></div>
+<div id="notmessage" style="margin-top:24px;background:#e8d29c;text-align:center;"></div>
+		<div style="width:inherit;position:absolute;bottom:4px;text-align:center;">
+		<button onclick="hideWindow('notwindow');">Ok</button></div>
+		</div>
+
+<div class="chatthing">
+<div class="chatbox">
+Change your color in the chat to either
+<span style="color:#f00;">red</span>,
+<span style="color:#080;">green</span>,
+<span style="color:#00f;">blue</span>,
+or <span style="color:#f88;">pink</span> to join in!
+<span style="font-size:10pt;position:absolute;top:22px;">...or subscribe!</span>
+<br/>
+Challenge: No Challenge!
+</div>
+</div>
+
+</body>
+</html>
